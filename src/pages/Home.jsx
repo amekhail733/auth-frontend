@@ -11,7 +11,7 @@ const Home = () => {
     useEffect(() =>{
         const verifyCookie = async () => {
             if (!cookies.token){ navigate("/login"); }
-            const { data } = await axios.post("http://localhost:4000", {}, { withCredentials: true });
+            const { data } = await axios.post("https://auth-backend-89jk.onrender.com", {}, { withCredentials: true });
             const { status, user } = data;
             setUsername(user);
             return status
